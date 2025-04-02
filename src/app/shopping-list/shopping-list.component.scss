@@ -1,0 +1,125 @@
+@keyframes shake {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-5px); }
+    50% { transform: translateY(5px); }
+    75% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+.container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px #ccc;
+    padding: 20px 30px;
+    text-align: center;
+    max-width: 1000px;
+    height: 100%;
+    display:flow-root;
+    margin: auto;
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4b4949;
+}
+
+.add-item-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    flex: 1;
+    width: 50%;
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #0056b3;
+    animation: shake 0.1s ease-out;
+}
+
+button[type="submit"]{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: backgroud 0.3s;
+}
+
+button[type="submit"]:hover{
+    background: #014792;
+    border-radius: 10px;
+    animation: shake 0.2s ease-out ;
+    box-shadow: 0 0 10px #014792;
+}
+
+button:hover{
+    background: #570707;
+    border-radius: 10px;
+    animation: shake 0.2s ease-out ;
+    box-shadow: 0 0 10px #570707;
+}
+
+button{
+    width: 10%;
+    right: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #d51f1f;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin: auto;
+    transition: backgroud 0.3s;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+thead{
+    background:  #007bff;
+    color: #fff;
+}
+
+th{
+    background:  #007bff;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+tr:nth-child(odd){
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even){
+    background-color: #e6f0ff;
+}
+
+input[type="checkbox"]{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.item-crossed-out{
+    text-decoration: line-through;
+}

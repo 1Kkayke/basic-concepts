@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="form-box">
+        <form #frm="ngForm" (ngSubmit)="calculate()">
+            <h2>Calculator</h2>
+            <label for="number1">number1</label>
+            <input type="number" name="number1" id="number1" [(ngModel)]="number1"/>
+
+            <label for="number2">number2</label>
+            <input type="number" name ="number2" id="number2" [(ngModel)]="number2" />
+            
+            <select class="form-control" name="operations" type="text" [(ngModel)]="typeOperation" (ngModelChange)="onOperationChange($event)">
+            
+                <option class="{{typeOperation}}" ngValue="+" >Addition</option>
+                
+                <option class="{{typeOperation}} " ngValue="-" >subtraction</option>
+                
+                <option class="{{typeOperation}} " ngValue="/" >Division</option>
+                
+                <option class="{{typeOperation}} " ngValue="*" >multiplication</option>
+            
+            </select>
+            
+            <button type="submit" [disabled]="!frm.valid">Calculate</button>
+        </form>
+        <div class="result-box" *ngIf="result">
+            <p>result: <span id="result"> {{result}} </span></p>
+    </div>
+</div>

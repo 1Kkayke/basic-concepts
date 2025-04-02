@@ -1,0 +1,32 @@
+<div class="container">
+    <h1> Shopping List</h1>
+    <form #frm="ngForm" class="ddd-item-form" (ngSubmit)="addItem()">
+        <input
+            type="text"
+            id="item"
+            name="item"
+            [(ngModel)]="item"
+            placeholder="Enter item" />
+        <button type="submit"> Enter </button>
+        <button type="button" (click)="clearList()">Clear</button>
+    </form>
+    <table>
+        <thead>
+            <th>#</th>
+            <th>item</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let element of list">
+                <td>{{element.id}}</td>
+                <td><span [ngClass]="{'item-crossed-out' : element.purchased}">
+                        {{element.name}}</span></td>
+                <td><input type="checkbox"
+                        (click)="crossedOutItem(element)"
+                        [checked]="element.purchased">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
